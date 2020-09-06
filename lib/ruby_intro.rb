@@ -5,14 +5,18 @@
 def sum arr
   # YOUR CODE HERE
   arr.inject(0, :+)
+  #arr.inject(0){|sum, x| sum+x}
 end
 
 def max_2_sum arr
   # YOUR CODE HERE
+  arr.max(2).reduce(0, :+)
 end
 
 def sum_to_n? arr, n
   # YOUR CODE HERE
+  arr.combination(2).each { |pair| return true if pair.inject(:+) == n }
+  return false
 end
 
 # Part 2
